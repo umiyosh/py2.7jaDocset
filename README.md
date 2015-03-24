@@ -11,12 +11,12 @@ python2.7jaのdash用 docksetです。
 
 pyja: で検索できます。
 
-## 作成手順
+## このdocksetの作成手順
 
 ~~~ bash
 % sudo pip install doc2dash
 % wget https://python-doc-ja.googlecode.com/files/python-doc-2.7ja1-html.tar.gz
-% tar xvzf python-2.7.9-docs-html.tar.bz2
+% tar xvzf python-doc-2.7ja1-html.tar.gz
 % doc2dash -n Python2.7ja -i ./python-doc-2.7ja1-html/_static/py.png -I index.html -d ./output ./python-doc-2.7ja1-html
 ~~~
 
