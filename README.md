@@ -6,7 +6,7 @@ python2.7jaのdash用 docksetです。
 
 ~~~ bash
 % git clone https://github.com/umiyosh/py2.7jaDocset.git
-% cd py2.7jaDocset ;open py2.7ja.dockset
+% cd py2.7jaDocset ;open Python2.7ja.docset
 ~~~
 
 pyja: で検索できます。
