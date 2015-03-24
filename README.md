@@ -1,6 +1,6 @@
 ## これは？
 
-python2.7jaのdash用 docksetです。
+python2.7jaのdash用 docsetです。
 
 ## 使い方
 
@@ -11,7 +11,7 @@ python2.7jaのdash用 docksetです。
 
 pyja: で検索できます。
 
-## このdocksetの作成手順
+## このdocsetの作成手順
 
 ~~~ bash
 % sudo pip install doc2dash
@@ -22,6 +22,6 @@ pyja: で検索できます。
 
 ## 著作権・ライセンスについて
 
-このdocksetは [python-doc-ja - Pythonドキュメント日本語翻訳プロジェクト ](https://code.google.com/p/python-doc-ja/) で翻訳されたドキュメントを使用してdocksetにまとめたものです。
+このdocsetは [python-doc-ja - Pythonドキュメント日本語翻訳プロジェクト ](https://code.google.com/p/python-doc-ja/) で翻訳されたドキュメントを使用してdocsetにまとめたものです。
 このPythonドキュメント翻訳プロジェクトの成果物は、底本の著作権およびライセンスによる制限のない限り、翻訳著作権はこれを Python ドキュメント翻訳プロジェクト(責任者: 稲田、増田、川西)に帰属し、Python と同じ Python Software Foundation(PSF) ライセンスの下に公開するものとします。
 
