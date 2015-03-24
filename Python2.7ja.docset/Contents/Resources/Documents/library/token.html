@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>31.5. token — Python 解析木と共に使われる定数 — Python 2.7ja1 documentation</title>
+<link href="../_static/sphinxdoc.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.7ja1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="../_static/jquery.js" type="text/javascript"></script>
+<script src="../_static/underscore.js" type="text/javascript"></script>
+<script src="../_static/doctools.js" type="text/javascript"></script>
+<script src="../_static/translations.js" type="text/javascript"></script>
+<link href="../_static/opensearch.xml" rel="search" title="Python 2.7ja1 documentation 内を検索" type="application/opensearchdescription+xml"/>
+<link href="../about.html" rel="author" title="このドキュメントについて"/>
+<link href="../copyright.html" rel="copyright" title="著作権"/>
+<link href="../index.html" rel="top" title="Python 2.7ja1 documentation"/>
+<link href="language.html" rel="up" title="31. Python言語サービス"/>
+<link href="keyword.html" rel="next" title="31.6. keyword — Python キーワードチェック"/>
+<link href="symbol.html" rel="prev" title="31.4. symbol — Python 解析木と共に使われる定数"/>
+<link href="../_static/py.png" rel="shortcut icon" type="image/png"/>
+<script src="../_static/copybutton.js" type="text/javascript"></script>
+<script src="../_static/_jp.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="related">
+<h3>ナビゲーション</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="../genindex.html" title="総合索引">索引</a></li>
+<li class="right">
+<a href="../py-modindex.html" title="Pythonモジュール索引">モジュール</a> |</li>
+<li class="right">
+<a accesskey="N" href="keyword.html" title="31.6. keyword — Python キーワードチェック">次へ</a> |</li>
+<li class="right">
+<a accesskey="P" href="symbol.html" title="31.4. symbol — Python 解析木と共に使われる定数">前へ</a> |</li>
+<li><img alt="" src="../_static/py.png" style="vertical-align: middle; margin-top: -1px"/></li>
+<li><a href="../index.html">Python 2.7ja1 documentation</a> »</li>
+<li><a href="index.html">Python 標準ライブラリ</a> »</li>
+<li><a accesskey="U" href="language.html">31. Python言語サービス</a> »</li>
+</ul>
+</div>
+<div class="sphinxsidebar">
+<div class="sphinxsidebarwrapper">
+<h4>前のトピックへ</h4>
+<p class="topless"><a href="symbol.html" title="前の章へ">31.4. <tt class="docutils literal docutils literal docutils literal"><span class="pre">symbol</span></tt> — Python 解析木と共に使われる定数</a></p>
+<h4>次のトピックへ</h4>
+<p class="topless"><a href="keyword.html" title="次の章へ">31.6. <tt class="docutils literal docutils literal"><span class="pre">keyword</span></tt> — Python キーワードチェック</a></p>
+<h3>このページ</h3>
+<ul class="this-page-menu">
+<li><a href="../_sources/library/token.txt" rel="nofollow">ソースコードを表示</a></li>
+</ul>
+<div id="searchbox" style="display: none">
+<h3>クイック検索</h3>
+<form action="../search.html" class="search" method="get">
+<input name="q" type="text"/>
+<input type="submit" value="検索"/>
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+<p class="searchtip" style="font-size: 90%">
+    モジュール、クラス、または関数名を入力してください
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+</div>
+</div>
+<div class="document">
+<div class="documentwrapper">
+<div class="bodywrapper">
+<div class="body">
+<div class="section" id="module-token">
+<span id="token-python"></span><h1><a name="//apple_ref/cpp/Module/token"></a>31.5. <a class="reference internal" href="#module-token" title="token: 解析木の終端ノードを表す定数。"><tt class="xref py py-mod docutils literal"><span class="pre">token</span></tt></a> — Python 解析木と共に使われる定数<a class="headerlink" href="#module-token" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>このモジュールは解析木の葉ノード(終端記号)の数値を表す定数を提供します。言語の文法のコンテキストにおける名前の定義については、
+Python ディストリビューションのファイル <tt class="file docutils literal"><span class="pre">Grammar/Grammar</span></tt> を参照してください。名前がマップする特定の数値は Python のバージョン間で変わります。</p>
+<p>このモジュールは、数値コードから名前へのマッピングと、いくつかの関数も提供しています。関数は Python の C ヘッダファイルの定義を反映します。</p>
+<dl class="data">
+<dt id="token.tok_name"><a name="//apple_ref/cpp/Value/token.tok_name"></a>
+<tt class="descclassname">token.</tt><tt class="descname">tok_name</tt><a class="headerlink" href="#token.tok_name" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>辞書はこのモジュールで定義されている定数の数値を名前の文字列へマップし、より人が読みやすいように解析木を表現します。</p>
+</dd></dl>
+<dl class="function">
+<dt id="token.ISTERMINAL"><a name="//apple_ref/cpp/Function/token.ISTERMINAL"></a>
+<tt class="descclassname">token.</tt><tt class="descname">ISTERMINAL</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#token.ISTERMINAL" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>終端トークンの値に対して真を返します。</p>
+</dd></dl>
+<dl class="function">
+<dt id="token.ISNONTERMINAL"><a name="//apple_ref/cpp/Function/token.ISNONTERMINAL"></a>
+<tt class="descclassname">token.</tt><tt class="descname">ISNONTERMINAL</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#token.ISNONTERMINAL" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>非終端トークンの値に対して真を返します。</p>
+</dd></dl>
+<dl class="function">
+<dt id="token.ISEOF"><a name="//apple_ref/cpp/Function/token.ISEOF"></a>
+<tt class="descclassname">token.</tt><tt class="descname">ISEOF</tt><big>(</big><em>x</em><big>)</big><a class="headerlink" href="#token.ISEOF" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p><em>x</em> が入力の終わりを示すマーカーならば、真を返します。</p>
+</dd></dl>
+<p>token の定数一覧:</p>
+<dl class="data">
+<dt id="token.ENDMARKER"><a name="//apple_ref/cpp/Value/token.ENDMARKER"></a>
+<tt class="descclassname">token.</tt><tt class="descname">ENDMARKER</tt><a class="headerlink" href="#token.ENDMARKER" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.NAME"><a name="//apple_ref/cpp/Value/token.NAME"></a>
+<tt class="descclassname">token.</tt><tt class="descname">NAME</tt><a class="headerlink" href="#token.NAME" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.NUMBER"><a name="//apple_ref/cpp/Value/token.NUMBER"></a>
+<tt class="descclassname">token.</tt><tt class="descname">NUMBER</tt><a class="headerlink" href="#token.NUMBER" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.STRING"><a name="//apple_ref/cpp/Value/token.STRING"></a>
+<tt class="descclassname">token.</tt><tt class="descname">STRING</tt><a class="headerlink" href="#token.STRING" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.NEWLINE"><a name="//apple_ref/cpp/Value/token.NEWLINE"></a>
+<tt class="descclassname">token.</tt><tt class="descname">NEWLINE</tt><a class="headerlink" href="#token.NEWLINE" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.INDENT"><a name="//apple_ref/cpp/Value/token.INDENT"></a>
+<tt class="descclassname">token.</tt><tt class="descname">INDENT</tt><a class="headerlink" href="#token.INDENT" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.DEDENT"><a name="//apple_ref/cpp/Value/token.DEDENT"></a>
+<tt class="descclassname">token.</tt><tt class="descname">DEDENT</tt><a class="headerlink" href="#token.DEDENT" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.LPAR"><a name="//apple_ref/cpp/Value/token.LPAR"></a>
+<tt class="descclassname">token.</tt><tt class="descname">LPAR</tt><a class="headerlink" href="#token.LPAR" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.RPAR"><a name="//apple_ref/cpp/Value/token.RPAR"></a>
+<tt class="descclassname">token.</tt><tt class="descname">RPAR</tt><a class="headerlink" href="#token.RPAR" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.LSQB"><a name="//apple_ref/cpp/Value/token.LSQB"></a>
+<tt class="descclassname">token.</tt><tt class="descname">LSQB</tt><a class="headerlink" href="#token.LSQB" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.RSQB"><a name="//apple_ref/cpp/Value/token.RSQB"></a>
+<tt class="descclassname">token.</tt><tt class="descname">RSQB</tt><a class="headerlink" href="#token.RSQB" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.COLON"><a name="//apple_ref/cpp/Value/token.COLON"></a>
+<tt class="descclassname">token.</tt><tt class="descname">COLON</tt><a class="headerlink" href="#token.COLON" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.COMMA"><a name="//apple_ref/cpp/Value/token.COMMA"></a>
+<tt class="descclassname">token.</tt><tt class="descname">COMMA</tt><a class="headerlink" href="#token.COMMA" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.SEMI"><a name="//apple_ref/cpp/Value/token.SEMI"></a>
+<tt class="descclassname">token.</tt><tt class="descname">SEMI</tt><a class="headerlink" href="#token.SEMI" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.PLUS"><a name="//apple_ref/cpp/Value/token.PLUS"></a>
+<tt class="descclassname">token.</tt><tt class="descname">PLUS</tt><a class="headerlink" href="#token.PLUS" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.MINUS"><a name="//apple_ref/cpp/Value/token.MINUS"></a>
+<tt class="descclassname">token.</tt><tt class="descname">MINUS</tt><a class="headerlink" href="#token.MINUS" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.STAR"><a name="//apple_ref/cpp/Value/token.STAR"></a>
+<tt class="descclassname">token.</tt><tt class="descname">STAR</tt><a class="headerlink" href="#token.STAR" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.SLASH"><a name="//apple_ref/cpp/Value/token.SLASH"></a>
+<tt class="descclassname">token.</tt><tt class="descname">SLASH</tt><a class="headerlink" href="#token.SLASH" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.VBAR"><a name="//apple_ref/cpp/Value/token.VBAR"></a>
+<tt class="descclassname">token.</tt><tt class="descname">VBAR</tt><a class="headerlink" href="#token.VBAR" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.AMPER"><a name="//apple_ref/cpp/Value/token.AMPER"></a>
+<tt class="descclassname">token.</tt><tt class="descname">AMPER</tt><a class="headerlink" href="#token.AMPER" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.LESS"><a name="//apple_ref/cpp/Value/token.LESS"></a>
+<tt class="descclassname">token.</tt><tt class="descname">LESS</tt><a class="headerlink" href="#token.LESS" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.GREATER"><a name="//apple_ref/cpp/Value/token.GREATER"></a>
+<tt class="descclassname">token.</tt><tt class="descname">GREATER</tt><a class="headerlink" href="#token.GREATER" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.EQUAL"><a name="//apple_ref/cpp/Value/token.EQUAL"></a>
+<tt class="descclassname">token.</tt><tt class="descname">EQUAL</tt><a class="headerlink" href="#token.EQUAL" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.DOT"><a name="//apple_ref/cpp/Value/token.DOT"></a>
+<tt class="descclassname">token.</tt><tt class="descname">DOT</tt><a class="headerlink" href="#token.DOT" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.PERCENT"><a name="//apple_ref/cpp/Value/token.PERCENT"></a>
+<tt class="descclassname">token.</tt><tt class="descname">PERCENT</tt><a class="headerlink" href="#token.PERCENT" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.BACKQUOTE"><a name="//apple_ref/cpp/Value/token.BACKQUOTE"></a>
+<tt class="descclassname">token.</tt><tt class="descname">BACKQUOTE</tt><a class="headerlink" href="#token.BACKQUOTE" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.LBRACE"><a name="//apple_ref/cpp/Value/token.LBRACE"></a>
+<tt class="descclassname">token.</tt><tt class="descname">LBRACE</tt><a class="headerlink" href="#token.LBRACE" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.RBRACE"><a name="//apple_ref/cpp/Value/token.RBRACE"></a>
+<tt class="descclassname">token.</tt><tt class="descname">RBRACE</tt><a class="headerlink" href="#token.RBRACE" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.EQEQUAL"><a name="//apple_ref/cpp/Value/token.EQEQUAL"></a>
+<tt class="descclassname">token.</tt><tt class="descname">EQEQUAL</tt><a class="headerlink" href="#token.EQEQUAL" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.NOTEQUAL"><a name="//apple_ref/cpp/Value/token.NOTEQUAL"></a>
+<tt class="descclassname">token.</tt><tt class="descname">NOTEQUAL</tt><a class="headerlink" href="#token.NOTEQUAL" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.LESSEQUAL"><a name="//apple_ref/cpp/Value/token.LESSEQUAL"></a>
+<tt class="descclassname">token.</tt><tt class="descname">LESSEQUAL</tt><a class="headerlink" href="#token.LESSEQUAL" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.GREATEREQUAL"><a name="//apple_ref/cpp/Value/token.GREATEREQUAL"></a>
+<tt class="descclassname">token.</tt><tt class="descname">GREATEREQUAL</tt><a class="headerlink" href="#token.GREATEREQUAL" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.TILDE"><a name="//apple_ref/cpp/Value/token.TILDE"></a>
+<tt class="descclassname">token.</tt><tt class="descname">TILDE</tt><a class="headerlink" href="#token.TILDE" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.CIRCUMFLEX"><a name="//apple_ref/cpp/Value/token.CIRCUMFLEX"></a>
+<tt class="descclassname">token.</tt><tt class="descname">CIRCUMFLEX</tt><a class="headerlink" href="#token.CIRCUMFLEX" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.LEFTSHIFT"><a name="//apple_ref/cpp/Value/token.LEFTSHIFT"></a>
+<tt class="descclassname">token.</tt><tt class="descname">LEFTSHIFT</tt><a class="headerlink" href="#token.LEFTSHIFT" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.RIGHTSHIFT"><a name="//apple_ref/cpp/Value/token.RIGHTSHIFT"></a>
+<tt class="descclassname">token.</tt><tt class="descname">RIGHTSHIFT</tt><a class="headerlink" href="#token.RIGHTSHIFT" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.DOUBLESTAR"><a name="//apple_ref/cpp/Value/token.DOUBLESTAR"></a>
+<tt class="descclassname">token.</tt><tt class="descname">DOUBLESTAR</tt><a class="headerlink" href="#token.DOUBLESTAR" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.PLUSEQUAL"><a name="//apple_ref/cpp/Value/token.PLUSEQUAL"></a>
+<tt class="descclassname">token.</tt><tt class="descname">PLUSEQUAL</tt><a class="headerlink" href="#token.PLUSEQUAL" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.MINEQUAL"><a name="//apple_ref/cpp/Value/token.MINEQUAL"></a>
+<tt class="descclassname">token.</tt><tt class="descname">MINEQUAL</tt><a class="headerlink" href="#token.MINEQUAL" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.STAREQUAL"><a name="//apple_ref/cpp/Value/token.STAREQUAL"></a>
+<tt class="descclassname">token.</tt><tt class="descname">STAREQUAL</tt><a class="headerlink" href="#token.STAREQUAL" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.SLASHEQUAL"><a name="//apple_ref/cpp/Value/token.SLASHEQUAL"></a>
+<tt class="descclassname">token.</tt><tt class="descname">SLASHEQUAL</tt><a class="headerlink" href="#token.SLASHEQUAL" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.PERCENTEQUAL"><a name="//apple_ref/cpp/Value/token.PERCENTEQUAL"></a>
+<tt class="descclassname">token.</tt><tt class="descname">PERCENTEQUAL</tt><a class="headerlink" href="#token.PERCENTEQUAL" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.AMPEREQUAL"><a name="//apple_ref/cpp/Value/token.AMPEREQUAL"></a>
+<tt class="descclassname">token.</tt><tt class="descname">AMPEREQUAL</tt><a class="headerlink" href="#token.AMPEREQUAL" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.VBAREQUAL"><a name="//apple_ref/cpp/Value/token.VBAREQUAL"></a>
+<tt class="descclassname">token.</tt><tt class="descname">VBAREQUAL</tt><a class="headerlink" href="#token.VBAREQUAL" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.CIRCUMFLEXEQUAL"><a name="//apple_ref/cpp/Value/token.CIRCUMFLEXEQUAL"></a>
+<tt class="descclassname">token.</tt><tt class="descname">CIRCUMFLEXEQUAL</tt><a class="headerlink" href="#token.CIRCUMFLEXEQUAL" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.LEFTSHIFTEQUAL"><a name="//apple_ref/cpp/Value/token.LEFTSHIFTEQUAL"></a>
+<tt class="descclassname">token.</tt><tt class="descname">LEFTSHIFTEQUAL</tt><a class="headerlink" href="#token.LEFTSHIFTEQUAL" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.RIGHTSHIFTEQUAL"><a name="//apple_ref/cpp/Value/token.RIGHTSHIFTEQUAL"></a>
+<tt class="descclassname">token.</tt><tt class="descname">RIGHTSHIFTEQUAL</tt><a class="headerlink" href="#token.RIGHTSHIFTEQUAL" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.DOUBLESTAREQUAL"><a name="//apple_ref/cpp/Value/token.DOUBLESTAREQUAL"></a>
+<tt class="descclassname">token.</tt><tt class="descname">DOUBLESTAREQUAL</tt><a class="headerlink" href="#token.DOUBLESTAREQUAL" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.DOUBLESLASH"><a name="//apple_ref/cpp/Value/token.DOUBLESLASH"></a>
+<tt class="descclassname">token.</tt><tt class="descname">DOUBLESLASH</tt><a class="headerlink" href="#token.DOUBLESLASH" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.DOUBLESLASHEQUAL"><a name="//apple_ref/cpp/Value/token.DOUBLESLASHEQUAL"></a>
+<tt class="descclassname">token.</tt><tt class="descname">DOUBLESLASHEQUAL</tt><a class="headerlink" href="#token.DOUBLESLASHEQUAL" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.AT"><a name="//apple_ref/cpp/Value/token.AT"></a>
+<tt class="descclassname">token.</tt><tt class="descname">AT</tt><a class="headerlink" href="#token.AT" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.OP"><a name="//apple_ref/cpp/Value/token.OP"></a>
+<tt class="descclassname">token.</tt><tt class="descname">OP</tt><a class="headerlink" href="#token.OP" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.ERRORTOKEN"><a name="//apple_ref/cpp/Value/token.ERRORTOKEN"></a>
+<tt class="descclassname">token.</tt><tt class="descname">ERRORTOKEN</tt><a class="headerlink" href="#token.ERRORTOKEN" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.N_TOKENS"><a name="//apple_ref/cpp/Value/token.N_TOKENS"></a>
+<tt class="descclassname">token.</tt><tt class="descname">N_TOKENS</tt><a class="headerlink" href="#token.N_TOKENS" title="この定義へのパーマリンク">¶</a></dt>
+<dt id="token.NT_OFFSET"><a name="//apple_ref/cpp/Value/token.NT_OFFSET"></a>
+<tt class="descclassname">token.</tt><tt class="descname">NT_OFFSET</tt><a class="headerlink" href="#token.NT_OFFSET" title="この定義へのパーマリンク">¶</a></dt>
+<dd></dd></dl>
+<div class="admonition- admonition seealso">
+<p class="first admonition-title">参考</p>
+<dl class="last docutils">
+<dt><a class="reference internal" href="parser.html#module-parser" title="parser: Python ソースコードに対する解析木へのアクセス。"><tt class="xref py py-mod docutils literal"><span class="pre">parser</span></tt></a> モジュール</dt>
+<dd><a class="reference internal" href="parser.html#module-parser" title="parser: Python ソースコードに対する解析木へのアクセス。"><tt class="xref py py-mod docutils literal"><span class="pre">parser</span></tt></a> モジュールの二番目の例で、
+<a class="reference internal" href="symbol.html#module-symbol" title="symbol: 解析木の内部ノードを表す定数。"><tt class="xref py py-mod docutils literal"><span class="pre">symbol</span></tt></a> モジュールの使い方を示しています。</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div class="related">
+<h3>ナビゲーション</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="../genindex.html" title="総合索引">索引</a></li>
+<li class="right">
+<a href="../py-modindex.html" title="Pythonモジュール索引">モジュール</a> |</li>
+<li class="right">
+<a href="keyword.html" title="31.6. keyword — Python キーワードチェック">次へ</a> |</li>
+<li class="right">
+<a href="symbol.html" title="31.4. symbol — Python 解析木と共に使われる定数">前へ</a> |</li>
+<li><img alt="" src="../_static/py.png" style="vertical-align: middle; margin-top: -1px"/></li>
+<li><a href="../index.html">Python 2.7ja1 documentation</a> »</li>
+<li><a href="index.html">Python 標準ライブラリ</a> »</li>
+<li><a href="language.html">31. Python言語サービス</a> »</li>
+</ul>
+</div>
+<div class="footer">
+        © <a href="../copyright.html">Copyright</a> 1990-2011, Python Software Foundation.
+      最終更新: 2011-12-26
+      このドキュメントは <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2pre/02cb752c6a9e で生成しました。
+    </div>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>21.9. sndhdr — サウンドファイルの識別 — Python 2.7ja1 documentation</title>
+<link href="../_static/sphinxdoc.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.7ja1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="../_static/jquery.js" type="text/javascript"></script>
+<script src="../_static/underscore.js" type="text/javascript"></script>
+<script src="../_static/doctools.js" type="text/javascript"></script>
+<script src="../_static/translations.js" type="text/javascript"></script>
+<link href="../_static/opensearch.xml" rel="search" title="Python 2.7ja1 documentation 内を検索" type="application/opensearchdescription+xml"/>
+<link href="../about.html" rel="author" title="このドキュメントについて"/>
+<link href="../copyright.html" rel="copyright" title="著作権"/>
+<link href="../index.html" rel="top" title="Python 2.7ja1 documentation"/>
+<link href="mm.html" rel="up" title="21. マルチメディアサービス"/>
+<link href="ossaudiodev.html" rel="next" title="21.10. ossaudiodev — OSS互換オーディオデバイスへのアクセス"/>
+<link href="imghdr.html" rel="prev" title="21.8. imghdr — 画像の形式を決定する"/>
+<link href="../_static/py.png" rel="shortcut icon" type="image/png"/>
+<script src="../_static/copybutton.js" type="text/javascript"></script>
+<script src="../_static/_jp.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="related">
+<h3>ナビゲーション</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="../genindex.html" title="総合索引">索引</a></li>
+<li class="right">
+<a href="../py-modindex.html" title="Pythonモジュール索引">モジュール</a> |</li>
+<li class="right">
+<a accesskey="N" href="ossaudiodev.html" title="21.10. ossaudiodev — OSS互換オーディオデバイスへのアクセス">次へ</a> |</li>
+<li class="right">
+<a accesskey="P" href="imghdr.html" title="21.8. imghdr — 画像の形式を決定する">前へ</a> |</li>
+<li><img alt="" src="../_static/py.png" style="vertical-align: middle; margin-top: -1px"/></li>
+<li><a href="../index.html">Python 2.7ja1 documentation</a> »</li>
+<li><a href="index.html">Python 標準ライブラリ</a> »</li>
+<li><a accesskey="U" href="mm.html">21. マルチメディアサービス</a> »</li>
+</ul>
+</div>
+<div class="sphinxsidebar">
+<div class="sphinxsidebarwrapper">
+<h4>前のトピックへ</h4>
+<p class="topless"><a href="imghdr.html" title="前の章へ">21.8. <tt class="docutils literal docutils literal docutils literal"><span class="pre">imghdr</span></tt> — 画像の形式を決定する</a></p>
+<h4>次のトピックへ</h4>
+<p class="topless"><a href="ossaudiodev.html" title="次の章へ">21.10. <tt class="docutils literal docutils literal docutils literal"><span class="pre">ossaudiodev</span></tt> — OSS互換オーディオデバイスへのアクセス</a></p>
+<h3>このページ</h3>
+<ul class="this-page-menu">
+<li><a href="../_sources/library/sndhdr.txt" rel="nofollow">ソースコードを表示</a></li>
+</ul>
+<div id="searchbox" style="display: none">
+<h3>クイック検索</h3>
+<form action="../search.html" class="search" method="get">
+<input name="q" type="text"/>
+<input type="submit" value="検索"/>
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+<p class="searchtip" style="font-size: 90%">
+    モジュール、クラス、または関数名を入力してください
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+</div>
+</div>
+<div class="document">
+<div class="documentwrapper">
+<div class="bodywrapper">
+<div class="body">
+<div class="section" id="module-sndhdr">
+<span id="sndhdr"></span><h1><a name="//apple_ref/cpp/Module/sndhdr"></a>21.9. <a class="reference internal" href="#module-sndhdr" title="sndhdr: サウンドファイルの識別"><tt class="xref py py-mod docutils literal"><span class="pre">sndhdr</span></tt></a> — サウンドファイルの識別<a class="headerlink" href="#module-sndhdr" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p id="index-0"><a class="reference internal" href="#module-sndhdr" title="sndhdr: サウンドファイルの識別"><tt class="xref py py-mod docutils literal"><span class="pre">sndhdr</span></tt></a> モジュールには、ファイルに保存されたサウンドデータの形式を識別するのに便利な関数が定義されています。どんな形式のサウンドデータがファイルに保存されているのか識別可能な場合、これらの関数は
+<tt class="docutils literal"><span class="pre">(type,</span> <span class="pre">sampling_rate,</span> <span class="pre">channels,</span> <span class="pre">frames,</span> <span class="pre">bits_per_sample)</span></tt> のタプルを返します。
+<em>type</em> はデータの形式を示す文字列で、 <tt class="docutils literal"><span class="pre">'aifc'</span></tt>, <tt class="docutils literal"><span class="pre">'aiff'</span></tt>,
+<tt class="docutils literal"><span class="pre">'au'</span></tt>, <tt class="docutils literal"><span class="pre">'hcom'</span></tt>, <tt class="docutils literal"><span class="pre">'sndr'</span></tt>, <tt class="docutils literal"><span class="pre">'sndt'</span></tt>, <tt class="docutils literal"><span class="pre">'voc'</span></tt>,
+<tt class="docutils literal"><span class="pre">'wav'</span></tt>, <tt class="docutils literal"><span class="pre">'8svx'</span></tt>, <tt class="docutils literal"><span class="pre">'sb'</span></tt>, <tt class="docutils literal"><span class="pre">'ub'</span></tt>, <tt class="docutils literal"><span class="pre">'ul'</span></tt> のうちの一つです。
+<em>sampling_rate</em> は実際のサンプリングレート値で、未知の場合や読み取ることが出来なかった場合は <tt class="docutils literal"><span class="pre">0</span></tt> です。同様に、 <em>channels</em> はチャンネル数で、識別できない場合や読み取ることが出来なかった場合は <tt class="docutils literal"><span class="pre">0</span></tt> です。
+<em>frames</em> はフレーム数で、識別できない場合は <tt class="docutils literal"><span class="pre">-1</span></tt> です。タプルの最後の要素 <em>bits_per_sample</em> はサンプルサイズを示すビット数ですが、A-LAWなら <tt class="docutils literal"><span class="pre">'A'</span></tt>, u-LAWなら <tt class="docutils literal"><span class="pre">'U'</span></tt> です。</p>
+<dl class="function">
+<dt id="sndhdr.what"><a name="//apple_ref/cpp/Function/sndhdr.what"></a>
+<tt class="descclassname">sndhdr.</tt><tt class="descname">what</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#sndhdr.what" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p><a class="reference internal" href="#sndhdr.whathdr" title="sndhdr.whathdr"><tt class="xref py py-func docutils literal"><span class="pre">whathdr()</span></tt></a> を使って、ファイル <em>filename</em> に保存されたサウンドデータの形式を識別します。識別可能なら上記のタプルを返し、識別できない場合は <tt class="docutils literal"><span class="pre">None</span></tt> を返します。</p>
+</dd></dl>
+<dl class="function">
+<dt id="sndhdr.whathdr"><a name="//apple_ref/cpp/Function/sndhdr.whathdr"></a>
+<tt class="descclassname">sndhdr.</tt><tt class="descname">whathdr</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#sndhdr.whathdr" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ファイルのヘッダ情報をもとに、保存されたサウンドデータの形式を識別します。ファイル名は <em>filename</em> で渡されます。識別可能なら上記のタプルを返し、識別できない場合は <tt class="docutils literal"><span class="pre">None</span></tt> を返します。</p>
+</dd></dl>
+</div>
+</div>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div class="related">
+<h3>ナビゲーション</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="../genindex.html" title="総合索引">索引</a></li>
+<li class="right">
+<a href="../py-modindex.html" title="Pythonモジュール索引">モジュール</a> |</li>
+<li class="right">
+<a href="ossaudiodev.html" title="21.10. ossaudiodev — OSS互換オーディオデバイスへのアクセス">次へ</a> |</li>
+<li class="right">
+<a href="imghdr.html" title="21.8. imghdr — 画像の形式を決定する">前へ</a> |</li>
+<li><img alt="" src="../_static/py.png" style="vertical-align: middle; margin-top: -1px"/></li>
+<li><a href="../index.html">Python 2.7ja1 documentation</a> »</li>
+<li><a href="index.html">Python 標準ライブラリ</a> »</li>
+<li><a href="mm.html">21. マルチメディアサービス</a> »</li>
+</ul>
+</div>
+<div class="footer">
+        © <a href="../copyright.html">Copyright</a> 1990-2011, Python Software Foundation.
+      最終更新: 2011-12-26
+      このドキュメントは <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2pre/02cb752c6a9e で生成しました。
+    </div>
+</body>
+</html>

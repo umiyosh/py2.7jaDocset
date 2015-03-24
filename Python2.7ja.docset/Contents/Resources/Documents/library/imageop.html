@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>21.2. imageop — 生の画像データを操作する — Python 2.7ja1 documentation</title>
+<link href="../_static/sphinxdoc.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.7ja1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="../_static/jquery.js" type="text/javascript"></script>
+<script src="../_static/underscore.js" type="text/javascript"></script>
+<script src="../_static/doctools.js" type="text/javascript"></script>
+<script src="../_static/translations.js" type="text/javascript"></script>
+<link href="../_static/opensearch.xml" rel="search" title="Python 2.7ja1 documentation 内を検索" type="application/opensearchdescription+xml"/>
+<link href="../about.html" rel="author" title="このドキュメントについて"/>
+<link href="../copyright.html" rel="copyright" title="著作権"/>
+<link href="../index.html" rel="top" title="Python 2.7ja1 documentation"/>
+<link href="mm.html" rel="up" title="21. マルチメディアサービス"/>
+<link href="aifc.html" rel="next" title="21.3. aifc — AIFFおよびAIFCファイルの読み書き"/>
+<link href="audioop.html" rel="prev" title="21.1. audioop — 生の音声データを操作する"/>
+<link href="../_static/py.png" rel="shortcut icon" type="image/png"/>
+<script src="../_static/copybutton.js" type="text/javascript"></script>
+<script src="../_static/_jp.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="related">
+<h3>ナビゲーション</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="../genindex.html" title="総合索引">索引</a></li>
+<li class="right">
+<a href="../py-modindex.html" title="Pythonモジュール索引">モジュール</a> |</li>
+<li class="right">
+<a accesskey="N" href="aifc.html" title="21.3. aifc — AIFFおよびAIFCファイルの読み書き">次へ</a> |</li>
+<li class="right">
+<a accesskey="P" href="audioop.html" title="21.1. audioop — 生の音声データを操作する">前へ</a> |</li>
+<li><img alt="" src="../_static/py.png" style="vertical-align: middle; margin-top: -1px"/></li>
+<li><a href="../index.html">Python 2.7ja1 documentation</a> »</li>
+<li><a href="index.html">Python 標準ライブラリ</a> »</li>
+<li><a accesskey="U" href="mm.html">21. マルチメディアサービス</a> »</li>
+</ul>
+</div>
+<div class="sphinxsidebar">
+<div class="sphinxsidebarwrapper">
+<h4>前のトピックへ</h4>
+<p class="topless"><a href="audioop.html" title="前の章へ">21.1. <tt class="docutils literal docutils literal"><span class="pre">audioop</span></tt> — 生の音声データを操作する</a></p>
+<h4>次のトピックへ</h4>
+<p class="topless"><a href="aifc.html" title="次の章へ">21.3. <tt class="docutils literal docutils literal"><span class="pre">aifc</span></tt> — AIFFおよびAIFCファイルの読み書き</a></p>
+<h3>このページ</h3>
+<ul class="this-page-menu">
+<li><a href="../_sources/library/imageop.txt" rel="nofollow">ソースコードを表示</a></li>
+</ul>
+<div id="searchbox" style="display: none">
+<h3>クイック検索</h3>
+<form action="../search.html" class="search" method="get">
+<input name="q" type="text"/>
+<input type="submit" value="検索"/>
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+<p class="searchtip" style="font-size: 90%">
+    モジュール、クラス、または関数名を入力してください
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+</div>
+</div>
+<div class="document">
+<div class="documentwrapper">
+<div class="bodywrapper">
+<div class="body">
+<div class="section" id="module-imageop">
+<span id="imageop"></span><h1><a name="//apple_ref/cpp/Module/imageop"></a>21.2. <a class="reference internal" href="#module-imageop" title="imageop: 生の画像データを操作する。 (撤廃)"><tt class="xref py py-mod docutils literal"><span class="pre">imageop</span></tt></a> — 生の画像データを操作する<a class="headerlink" href="#module-imageop" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p class="deprecated">
+<span class="versionmodified">バージョン 2.6 で撤廃: </span><a class="reference internal" href="#module-imageop" title="imageop: 生の画像データを操作する。 (撤廃)"><tt class="xref py py-mod docutils literal"><span class="pre">imageop</span></tt></a> モジュールは Python 3.0 では削除されます。</p>
+<p><a class="reference internal" href="#module-imageop" title="imageop: 生の画像データを操作する。 (撤廃)"><tt class="xref py py-mod docutils literal"><span class="pre">imageop</span></tt></a> モジュールは画像に関する便利な演算がふくまれています。Python文字列に保存されている8または32ビットのピクセルから構成される画像を操作します。これは <tt class="xref py py-func docutils literal"><span class="pre">gl.lrectwrite()</span></tt> と <a class="reference internal" href="imgfile.html#module-imgfile" title="imgfile: SGI imglib ファイルのサポート。 (撤廃) (IRIX)"><tt class="xref py py-mod docutils literal"><span class="pre">imgfile</span></tt></a> モジュールが使用しているものと同じフォーマットです。</p>
+<p>モジュールは次の変数と関数を定義しています:</p>
+<dl class="exception">
+<dt id="imageop.error"><a name="//apple_ref/cpp/Exception/imageop.error"></a>
+<em class="property">exception </em><tt class="descclassname">imageop.</tt><tt class="descname">error</tt><a class="headerlink" href="#imageop.error" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>この例外はピクセル当りの未知のビット数などのすべてのエラーで発生させられます。</p>
+</dd></dl>
+<dl class="function">
+<dt id="imageop.crop"><a name="//apple_ref/cpp/Function/imageop.crop"></a>
+<tt class="descclassname">imageop.</tt><tt class="descname">crop</tt><big>(</big><em>image</em>, <em>psize</em>, <em>width</em>, <em>height</em>, <em>x0</em>, <em>y0</em>, <em>x1</em>, <em>y1</em><big>)</big><a class="headerlink" href="#imageop.crop" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p><em>image</em> の選択された部分を返します。
+<em>image</em> は <em>width</em> × <em>height</em> の大きさで、 <em>psize</em> バイトのピクセルから構成されなければなりません。
+<em>x0</em>, <em>y0</em>, <em>x1</em> および <em>y1</em> は <tt class="xref py py-func docutils literal"><span class="pre">gl.lrectread()</span></tt> パラメータと同様です。すなわち、境界は新画像に含まれます。新しい境界は画像の内部である必要はありません。旧画像の外側になるピクセルは値をゼロに設定されます。
+<em>x0</em> が <em>x1</em> より大きければ、新画像は鏡像反転されます。y軸についても同じことが適用されます。</p>
+</dd></dl>
+<dl class="function">
+<dt id="imageop.scale"><a name="//apple_ref/cpp/Function/imageop.scale"></a>
+<tt class="descclassname">imageop.</tt><tt class="descname">scale</tt><big>(</big><em>image</em>, <em>psize</em>, <em>width</em>, <em>height</em>, <em>newwidth</em>, <em>newheight</em><big>)</big><a class="headerlink" href="#imageop.scale" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p><em>image</em> を大きさ <em>newwidth</em> × <em>newheight</em> に伸縮させて返します。補間は行われません。ばかばかしいほど単純なピクセルの複製と間引きを行い伸縮させます。そのため、コンピュータで作った画像やディザ処理された画像は伸縮した後見た目が良くありません。</p>
+</dd></dl>
+<dl class="function">
+<dt id="imageop.tovideo"><a name="//apple_ref/cpp/Function/imageop.tovideo"></a>
+<tt class="descclassname">imageop.</tt><tt class="descname">tovideo</tt><big>(</big><em>image</em>, <em>psize</em>, <em>width</em>, <em>height</em><big>)</big><a class="headerlink" href="#imageop.tovideo" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>垂直ローパスフィルタ処理を画像全体に行います。それぞれの目標ピクセルを垂直に並んだ二つの元ピクセルから計算することで行います。このルーチンの主な用途としては、画像がインターレース走査のビデオ装置に表示された場合に極端なちらつきを抑えるために用います。そのため、この名前があります。</p>
+</dd></dl>
+<dl class="function">
+<dt id="imageop.grey2mono"><a name="//apple_ref/cpp/Function/imageop.grey2mono"></a>
+<tt class="descclassname">imageop.</tt><tt class="descname">grey2mono</tt><big>(</big><em>image</em>, <em>width</em>, <em>height</em>, <em>threshold</em><big>)</big><a class="headerlink" href="#imageop.grey2mono" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>全ピクセルを二値化することによって、深さ8ビットのグレースケール画像を深さ1ビットの画像へ変換します。処理後の画像は隙間なく詰め込まれ、おそらく <a class="reference internal" href="#imageop.mono2grey" title="imageop.mono2grey"><tt class="xref py py-func docutils literal"><span class="pre">mono2grey()</span></tt></a> の引数としてしか使い道がないでしょう。</p>
+</dd></dl>
+<dl class="function">
+<dt id="imageop.dither2mono"><a name="//apple_ref/cpp/Function/imageop.dither2mono"></a>
+<tt class="descclassname">imageop.</tt><tt class="descname">dither2mono</tt><big>(</big><em>image</em>, <em>width</em>, <em>height</em><big>)</big><a class="headerlink" href="#imageop.dither2mono" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>(ばかばかしいほど単純な)ディザ処理アルゴリズムを用いて、8ビットグレースケール画像を1ビットのモノクロ画像に変換します。</p>
+</dd></dl>
+<dl class="function">
+<dt id="imageop.mono2grey"><a name="//apple_ref/cpp/Function/imageop.mono2grey"></a>
+<tt class="descclassname">imageop.</tt><tt class="descname">mono2grey</tt><big>(</big><em>image</em>, <em>width</em>, <em>height</em>, <em>p0</em>, <em>p1</em><big>)</big><a class="headerlink" href="#imageop.mono2grey" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>1ビットモノクロが象画像を8ビットのグレースケールまたはカラー画像に変換します。入力で値ゼロの全てのピクセルは出力では値 <em>p0</em> を取り、値0の入力ピクセルは出力では値 <em>p1</em> を取ります。白黒のモノクロ画像をグレースケールへ変換するためには、値 <tt class="docutils literal"><span class="pre">0</span></tt> と <tt class="docutils literal"><span class="pre">255</span></tt> をそれぞれ渡してください。</p>
+</dd></dl>
+<dl class="function">
+<dt id="imageop.grey2grey4"><a name="//apple_ref/cpp/Function/imageop.grey2grey4"></a>
+<tt class="descclassname">imageop.</tt><tt class="descname">grey2grey4</tt><big>(</big><em>image</em>, <em>width</em>, <em>height</em><big>)</big><a class="headerlink" href="#imageop.grey2grey4" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ディザ処理を行わずに、8ビットグレースケール画像を4ビットグレースケール画像へ変換します。</p>
+</dd></dl>
+<dl class="function">
+<dt id="imageop.grey2grey2"><a name="//apple_ref/cpp/Function/imageop.grey2grey2"></a>
+<tt class="descclassname">imageop.</tt><tt class="descname">grey2grey2</tt><big>(</big><em>image</em>, <em>width</em>, <em>height</em><big>)</big><a class="headerlink" href="#imageop.grey2grey2" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ディザ処理を行わずに、8ビットグレースケール画像を2ビットグレースケール画像に変換します。</p>
+</dd></dl>
+<dl class="function">
+<dt id="imageop.dither2grey2"><a name="//apple_ref/cpp/Function/imageop.dither2grey2"></a>
+<tt class="descclassname">imageop.</tt><tt class="descname">dither2grey2</tt><big>(</big><em>image</em>, <em>width</em>, <em>height</em><big>)</big><a class="headerlink" href="#imageop.dither2grey2" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ディザ処理を行い、8ビットグレースケール画像を2ビットグレースケール画像へ変換します。 <a class="reference internal" href="#imageop.dither2mono" title="imageop.dither2mono"><tt class="xref py py-func docutils literal"><span class="pre">dither2mono()</span></tt></a> については、ディザ処理アルゴリズムは現在とても単純です。</p>
+</dd></dl>
+<dl class="function">
+<dt id="imageop.grey42grey"><a name="//apple_ref/cpp/Function/imageop.grey42grey"></a>
+<tt class="descclassname">imageop.</tt><tt class="descname">grey42grey</tt><big>(</big><em>image</em>, <em>width</em>, <em>height</em><big>)</big><a class="headerlink" href="#imageop.grey42grey" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>4ビットグレースケール画像を8ビットグレースケール画像へ変換します。</p>
+</dd></dl>
+<dl class="function">
+<dt id="imageop.grey22grey"><a name="//apple_ref/cpp/Function/imageop.grey22grey"></a>
+<tt class="descclassname">imageop.</tt><tt class="descname">grey22grey</tt><big>(</big><em>image</em>, <em>width</em>, <em>height</em><big>)</big><a class="headerlink" href="#imageop.grey22grey" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>2ビットグレースケール画像を8ビットグレースケール画像へ変換します。</p>
+</dd></dl>
+<dl class="data">
+<dt id="imageop.backward_compatible"><a name="//apple_ref/cpp/Value/imageop.backward_compatible"></a>
+<tt class="descclassname">imageop.</tt><tt class="descname">backward_compatible</tt><a class="headerlink" href="#imageop.backward_compatible" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>0 にセットすると、このモジュールの関数は、リトルエンディアンのシステムで以前のバージョンと互換性のない方法でマルチバイトピクセル値を表現するようになります。このモジュールはもともと SGI 向けに書かれたのですが、SGI はビッグエンディアンのシステムであり、この変数を設定しても何の影響もありません。とはいえ、このコードはもともとどこでも動作するように考えて作られたわけではないので、バイトオーダに関する仮定が相互利用向けではありませんでした。この変数を 0 にすると、リトルエンディアンのシステムではバイトオーダを反転して、ビッグエンディアンと同じにします。</p>
+</dd></dl>
+</div>
+</div>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div class="related">
+<h3>ナビゲーション</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="../genindex.html" title="総合索引">索引</a></li>
+<li class="right">
+<a href="../py-modindex.html" title="Pythonモジュール索引">モジュール</a> |</li>
+<li class="right">
+<a href="aifc.html" title="21.3. aifc — AIFFおよびAIFCファイルの読み書き">次へ</a> |</li>
+<li class="right">
+<a href="audioop.html" title="21.1. audioop — 生の音声データを操作する">前へ</a> |</li>
+<li><img alt="" src="../_static/py.png" style="vertical-align: middle; margin-top: -1px"/></li>
+<li><a href="../index.html">Python 2.7ja1 documentation</a> »</li>
+<li><a href="index.html">Python 標準ライブラリ</a> »</li>
+<li><a href="mm.html">21. マルチメディアサービス</a> »</li>
+</ul>
+</div>
+<div class="footer">
+        © <a href="../copyright.html">Copyright</a> 1990-2011, Python Software Foundation.
+      最終更新: 2011-12-26
+      このドキュメントは <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2pre/02cb752c6a9e で生成しました。
+    </div>
+</body>
+</html>

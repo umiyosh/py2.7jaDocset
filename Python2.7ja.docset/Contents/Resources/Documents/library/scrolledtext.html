@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>24.4. ScrolledText — スクロールするテキストウィジェット — Python 2.7ja1 documentation</title>
+<link href="../_static/sphinxdoc.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.7ja1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+<script src="../_static/jquery.js" type="text/javascript"></script>
+<script src="../_static/underscore.js" type="text/javascript"></script>
+<script src="../_static/doctools.js" type="text/javascript"></script>
+<script src="../_static/translations.js" type="text/javascript"></script>
+<link href="../_static/opensearch.xml" rel="search" title="Python 2.7ja1 documentation 内を検索" type="application/opensearchdescription+xml"/>
+<link href="../about.html" rel="author" title="このドキュメントについて"/>
+<link href="../copyright.html" rel="copyright" title="著作権"/>
+<link href="../index.html" rel="top" title="Python 2.7ja1 documentation"/>
+<link href="tk.html" rel="up" title="24. Tkを用いたグラフィカルユーザインターフェイス"/>
+<link href="turtle.html" rel="next" title="24.5. turtle — Tkのためのタートルグラフィックス"/>
+<link href="tix.html" rel="prev" title="24.3. Tix — Tkの拡張ウィジェット"/>
+<link href="../_static/py.png" rel="shortcut icon" type="image/png"/>
+<script src="../_static/copybutton.js" type="text/javascript"></script>
+<script src="../_static/_jp.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="related">
+<h3>ナビゲーション</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a accesskey="I" href="../genindex.html" title="総合索引">索引</a></li>
+<li class="right">
+<a href="../py-modindex.html" title="Pythonモジュール索引">モジュール</a> |</li>
+<li class="right">
+<a accesskey="N" href="turtle.html" title="24.5. turtle — Tkのためのタートルグラフィックス">次へ</a> |</li>
+<li class="right">
+<a accesskey="P" href="tix.html" title="24.3. Tix — Tkの拡張ウィジェット">前へ</a> |</li>
+<li><img alt="" src="../_static/py.png" style="vertical-align: middle; margin-top: -1px"/></li>
+<li><a href="../index.html">Python 2.7ja1 documentation</a> »</li>
+<li><a href="index.html">Python 標準ライブラリ</a> »</li>
+<li><a accesskey="U" href="tk.html">24. Tkを用いたグラフィカルユーザインターフェイス</a> »</li>
+</ul>
+</div>
+<div class="sphinxsidebar">
+<div class="sphinxsidebarwrapper">
+<h4>前のトピックへ</h4>
+<p class="topless"><a href="tix.html" title="前の章へ">24.3. <tt class="docutils literal"><span class="pre">Tix</span></tt> — Tkの拡張ウィジェット</a></p>
+<h4>次のトピックへ</h4>
+<p class="topless"><a href="turtle.html" title="次の章へ">24.5. <tt class="docutils literal docutils literal"><span class="pre">turtle</span></tt> — Tkのためのタートルグラフィックス</a></p>
+<h3>このページ</h3>
+<ul class="this-page-menu">
+<li><a href="../_sources/library/scrolledtext.txt" rel="nofollow">ソースコードを表示</a></li>
+</ul>
+<div id="searchbox" style="display: none">
+<h3>クイック検索</h3>
+<form action="../search.html" class="search" method="get">
+<input name="q" type="text"/>
+<input type="submit" value="検索"/>
+<input name="check_keywords" type="hidden" value="yes"/>
+<input name="area" type="hidden" value="default"/>
+</form>
+<p class="searchtip" style="font-size: 90%">
+    モジュール、クラス、または関数名を入力してください
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+</div>
+</div>
+<div class="document">
+<div class="documentwrapper">
+<div class="bodywrapper">
+<div class="body">
+<div class="section" id="module-ScrolledText">
+<span id="scrolledtext"></span><h1><a name="//apple_ref/cpp/Module/ScrolledText"></a>24.4. <a class="reference internal" href="#module-ScrolledText" title="ScrolledText: 垂直スクロールバーを持つテキストウィジェット。 (Tk)"><tt class="xref py py-mod docutils literal"><span class="pre">ScrolledText</span></tt></a> — スクロールするテキストウィジェット<a class="headerlink" href="#module-ScrolledText" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p><a class="reference internal" href="#module-ScrolledText" title="ScrolledText: 垂直スクロールバーを持つテキストウィジェット。 (Tk)"><tt class="xref py py-mod docutils literal"><span class="pre">ScrolledText</span></tt></a> モジュールは”正しい動作”をするように設定された垂直スクロールバーをもつ基本的なテキストウィジェットを実装する同じ名前のクラスを提供します。 <a class="reference internal" href="#module-ScrolledText" title="ScrolledText: 垂直スクロールバーを持つテキストウィジェット。 (Tk)"><tt class="xref py py-class docutils literal"><span class="pre">ScrolledText</span></tt></a> クラスを使うことは、テキストウィジェットとスクロールバーを直接設定するより簡単です。コンストラクタは
+<tt class="xref py py-class docutils literal"><span class="pre">Tkinter.Text</span></tt> クラスのものを同じです。</p>
+<div class="admonition note">
+<p class="first admonition-title">ノート</p>
+<p class="last"><a class="reference internal" href="#module-ScrolledText" title="ScrolledText: 垂直スクロールバーを持つテキストウィジェット。 (Tk)"><tt class="xref py py-mod docutils literal"><span class="pre">ScrolledText</span></tt></a> は Python 3.0 で <tt class="xref py py-mod docutils literal"><span class="pre">tkinter.scrolledtext</span></tt>
+に改名されました。 <a class="reference internal" href="../glossary.html#term-to3"><em class="xref std std-term">2to3</em></a> ツールはソースの 3.0 への変換時に自動的に
+import を対応させます。</p>
+</div>
+<p>テキストウィジェットとスクロールバーは <tt class="xref py py-class docutils literal"><span class="pre">Frame</span></tt> の中に一緒にpackされ、 <tt class="xref py py-class docutils literal"><span class="pre">Grid</span></tt> と <tt class="xref py py-class docutils literal"><span class="pre">Pack</span></tt> ジオメトリマネジャのメソッドは<tt class="xref py py-class docutils literal"><span class="pre">Frame</span></tt> オブジェクトから得られます。これによって、もっとも標準的なジオメトリマネジャの振る舞いにするために、直接 <a class="reference internal" href="#module-ScrolledText" title="ScrolledText: 垂直スクロールバーを持つテキストウィジェット。 (Tk)"><tt class="xref py py-class docutils literal"><span class="pre">ScrolledText</span></tt></a>
+ウィジェットを使えるようになります。</p>
+<p>特定の制御が必要ならば、以下の属性が利用できます:</p>
+<dl class="attribute">
+<dt id="ScrolledText.ScrolledText.frame"><a name="//apple_ref/cpp/Attribute/ScrolledText.ScrolledText.frame"></a>
+<tt class="descclassname">ScrolledText.</tt><tt class="descname">frame</tt><a class="headerlink" href="#ScrolledText.ScrolledText.frame" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>テキストとスクロールバーウィジェットを取り囲むフレーム。</p>
+</dd></dl>
+<dl class="attribute">
+<dt id="ScrolledText.ScrolledText.vbar"><a name="//apple_ref/cpp/Attribute/ScrolledText.ScrolledText.vbar"></a>
+<tt class="descclassname">ScrolledText.</tt><tt class="descname">vbar</tt><a class="headerlink" href="#ScrolledText.ScrolledText.vbar" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>スクロールバーウィジェット。</p>
+</dd></dl>
+</div>
+</div>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+<div class="related">
+<h3>ナビゲーション</h3>
+<ul>
+<li class="right" style="margin-right: 10px">
+<a href="../genindex.html" title="総合索引">索引</a></li>
+<li class="right">
+<a href="../py-modindex.html" title="Pythonモジュール索引">モジュール</a> |</li>
+<li class="right">
+<a href="turtle.html" title="24.5. turtle — Tkのためのタートルグラフィックス">次へ</a> |</li>
+<li class="right">
+<a href="tix.html" title="24.3. Tix — Tkの拡張ウィジェット">前へ</a> |</li>
+<li><img alt="" src="../_static/py.png" style="vertical-align: middle; margin-top: -1px"/></li>
+<li><a href="../index.html">Python 2.7ja1 documentation</a> »</li>
+<li><a href="index.html">Python 標準ライブラリ</a> »</li>
+<li><a href="tk.html">24. Tkを用いたグラフィカルユーザインターフェイス</a> »</li>
+</ul>
+</div>
+<div class="footer">
+        © <a href="../copyright.html">Copyright</a> 1990-2011, Python Software Foundation.
+      最終更新: 2011-12-26
+      このドキュメントは <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2pre/02cb752c6a9e で生成しました。
+    </div>
+</body>
+</html>
